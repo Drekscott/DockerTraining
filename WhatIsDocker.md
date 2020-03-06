@@ -106,7 +106,8 @@ We should see that our Dockerfile made its way into the container :+1:
 
 #### Lets verify that we access the running container via HOSTIP:8000
 You can verify via a webbrowser or you can use the `curl` command.
-* If you want to verify via browser, then just visit http://hostip:8000
+* If you want to verify via browser, then just visit http://hostip:8000. You will see the webpage below.
+![nginxpage](nginx.png)
 * If you want to verify via the terminal, then just `curl -k hostip:8000`. You will see the output below.
 ```html
 <!DOCTYPE html>
