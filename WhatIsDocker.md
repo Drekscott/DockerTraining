@@ -1,4 +1,11 @@
-# Docker Explained
+# Docker Training
+
+## What will this training include?
+- [ ]	[Installation](#installation)
+- [ ]	Configuration / setup
+- [ ]	Hosting applications
+- [ ]	Deployment
+
 
 ## What is Docker?
 > Docker is a tool designed to make it easier to create, deploy, and run applications by using containers.
@@ -23,9 +30,17 @@
 ## Getting Started w/ Docker
 > Usually we would have an installation step here, but this would take much time. To learn more about getting docker installed please reference the docs at: https://docs.docker.com/get-docker/
 
-### What We Will Accomplish
-By the end of this training, you will have created an image, containerized a predifined application, and run that image as an container. You will be able to access 
+## Installation:
+#### For this training, we will focus on a Windows based environment:
+Navigate to the following link to follow along w/ installation: https://docs.docker.com/docker-for-windows/install/
 
+### What We Will Accomplish
+- [ ] **Create A Dockerfile**
+- [ ] **Containerize Predifined Application**
+- [ ] **Run image as a container**
+- [ ] **Access Container locally on port 80**
 
 ### Let's Define A Image
 To create our own image, we must first define a Dockerfile. A dockerfile is like a recipe for building a cake, but in our instance a image. Defining this file is the first step in containerizing an application.
+
+Let's create a image that serves a static web app.
