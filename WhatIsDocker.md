@@ -63,7 +63,10 @@ WORKDIR /app
 # Copy the contents of our current directory into the container
 COPY . .
 ```
-Now that we have the Dockerfile defined, we must now create a build of the image we specified.
+#### W/ the above code generated, we have specified a instruction set for our image to be built.
+![ContainerVSVirtualization](docker-docs.svg)
+
+#### Now that we have the Dockerfile defined, we must now create a build of the image we specified.
 
 #### Let's build our image.
 `docker build -t nginx-custom .`
@@ -90,7 +93,7 @@ CONTAINER ID        IMAGE               COMMAND                  CREATED        
 #### Lets verify that the container has the data we copied...
 First open a interactive terminal
 `docker exec -it nginx-custom-container bash`
-> *-it stands for* **Interactive Terminal**
+> *-it stands for* **Interactive Terminal**  
 > You should see a terminal opened:
 ```
 root@0205bdce7cc8:/app#
@@ -98,4 +101,37 @@ root@0205bdce7cc8:/app#
 Now let's check that the current working directory has our content.  
 ```bash
 root@0205bdce7cc8:/app# ls
+```
+We should see that our Dockerfile made its way into the container :+1:
+
+#### Lets verify that we access the running container via HOSTIP:8000
+You can verify via a webbrowser or you can use the `curl` command.
+* If you want to verify via browser, then just visit http://hostip:8000
+* If you want to verify via the terminal, then just `curl -k hostip:8000`. You will see the output below.
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<title>Welcome to nginx!</title>
+<style>
+    body {
+        width: 35em;
+        margin: 0 auto;
+        font-family: Tahoma, Verdana, Arial, sans-serif;
+    }
+</style>
+</head>
+<body>
+<h1>Welcome to nginx!</h1>
+<p>If you see this page, the nginx web server is successfully installed and
+working. Further configuration is required.</p>
+
+<p>For online documentation and support please refer to
+<a href="http://nginx.org/">nginx.org</a>.<br/>
+Commercial support is available at
+<a href="http://nginx.com/">nginx.com</a>.</p>
+
+<p><em>Thank you for using nginx.</em></p>
+</body>
+</html>
 ```
