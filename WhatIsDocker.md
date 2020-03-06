@@ -90,7 +90,7 @@ CONTAINER ID        IMAGE               COMMAND                  CREATED        
 #### Lets verify that the container has the data we copied...
 First open a interactive terminal
 `docker exec -it nginx-custom-container bash`
-> *-it stands for **Interactive Terminal**
+> *-it stands for* **Interactive Terminal**
 > You should see a terminal opened:
 ```
 root@0205bdce7cc8:/app#
