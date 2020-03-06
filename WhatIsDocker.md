@@ -34,11 +34,11 @@
 Navigate to the following link to follow along w/ installation: https://docs.docker.com/docker-for-windows/install/
 
 ## Containerize Applications
-### What We Will Accomplish
+### Objectives
 - [ ] **Create A Dockerfile**
 - [ ] **Containerize Predifined Application**
 - [ ] **Run image as a container**
-- [ ] **Access Container locally on port 80**
+- [ ] **Access Container locally on port 8000**
 
 ### Lets access our Docker environments.
 #### Three virtual machines have already been set up w/ docker installed. No need for us to download it locally on our computer. To access your specificed virtual machine, I will provide you with the key and you will then run the following command:  
@@ -136,3 +136,10 @@ Commercial support is available at
 </body>
 </html>
 ```
+### Completed Objectives
+- [x] **Create A Dockerfile**
+- [x] **Containerize Predifined Application**
+- [x] **Run image as a container**
+- [x] **Access Container locally on port 8000**
+
+After completing everything above we should now have completed all of our objectives. If you have any questions please let me know!
