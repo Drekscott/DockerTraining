@@ -1,8 +1,7 @@
 # Docker Training
 
 ## What will this training include?
-- [ ]	[**Installation**](#installation)
-- [ ]	[**Configuration / Setup**](#configuration)
+- [ ]	[**Installation/Configuration**](#installation)
 - [ ]	[**Containerize Applications**](#containerize-applications)
 - [ ]	**Deployment**
 
@@ -34,8 +33,6 @@
 #### For this training, we will focus on a Windows based environment:
 Navigate to the following link to follow along w/ installation: https://docs.docker.com/docker-for-windows/install/
 
-## Configuration:
-
 ## Containerize Applications
 ### What We Will Accomplish
 - [ ] **Create A Dockerfile**
@@ -43,7 +40,21 @@ Navigate to the following link to follow along w/ installation: https://docs.doc
 - [ ] **Run image as a container**
 - [ ] **Access Container locally on port 80**
 
+### Lets access our Docker environments.
+#### Three virtual machines have already been set up w/ docker installed. No need for us to download it locally on our computer. To access your specificed virtual machine, I will provide you with the key and you will then run the following command:  
+`ssh -i <private_key> vagrant@<IP>`
+#### After gaining access, verify that docker is installed w/:
+`docker -v`
+#### You should see the following output:
+```bash
+Docker version 19.03.7, build 7141c199a2
+```
 ### Let's Define A Image
 To create our own image, we must first define a Dockerfile. A dockerfile is like a recipe for building a cake, but in our instance a image. Defining this file is the first step in containerizing an application.
 
-Let's create a image that serves a static web app.
+#### Let's create a simple nginx image that copies files into container and serves a static site.
+```yaml
+FROM nginx:latest
+
+COPY . .
+```
