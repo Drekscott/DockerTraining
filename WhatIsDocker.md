@@ -54,7 +54,36 @@ To create our own image, we must first define a Dockerfile. A dockerfile is like
 
 #### Let's create a simple nginx image that copies files into container and serves a static site.
 ```yaml
+# Image we are basing off of
 FROM nginx:latest
 
+# Set a working directory
+WORKDIR /app
+
+# Copy the contents of our current directory into the container
 COPY . .
 ```
+Now that we have the Dockerfile defined, we must now create a build of the image we specified.
+
+#### Let's build our image.
+`docker build -t nginx-custom .`
+
+We should be able to see that our image was created using the following command: `docker image ls`. Output should be:
+```sh
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+nginx-custom        latest              64854d070707        0 minutes ago       127MB
+```
+> Now that we have our image created we need to run it and create our container
+
+#### Let's create our container
+`docker run --name nginx-custom-container -d -p 8000:80 nginx-custom`
+* ***<--name>**: argument gives the container a name*  
+* ***-d**: is to detach the process to the background*  
+* ***-p**: is to specify the port information. Here we are portforwarding from 8000 on the host into 80 on the guest*  
+
+We can see that our container is up and running. To see all currently running containersn use the command: `docker container ls`. Output should be:
+```sh
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                  NAMES
+0205bdce7cc8        nginx-custom        "nginx -g 'daemon of…"   18 minutes ago      Up 18 minutes       0.0.0.0:8000->80/tcp   nginx-custom-container
+```
+
