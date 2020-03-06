@@ -30,8 +30,8 @@
 > Usually we would have an installation step here, but this would take much time. To learn more about getting docker installed please reference the docs at: https://docs.docker.com/get-docker/
 
 ## Installation:
-#### For this training, we will focus on a Windows based environment:
-Navigate to the following link to follow along w/ installation: https://docs.docker.com/docker-for-windows/install/
+> For this training, we will focus on a Windows based environment:
+#### Navigate to the following link to follow along w/ installation: https://docs.docker.com/docker-for-windows/install/
 
 ## Containerize Applications
 ### Objectives
@@ -41,7 +41,7 @@ Navigate to the following link to follow along w/ installation: https://docs.doc
 - [ ] **Access Container locally on port 8000**
 
 ### Lets access our Docker environments.
-#### Three virtual machines have already been set up w/ docker installed. No need for us to download it locally on our computer. To access your specificed virtual machine, I will provide you with the key and you will then run the following command:  
+> Three virtual machines have already been set up w/ docker installed. No need for us to download it locally on our computer. To access your specificed virtual machine, I will provide you with the key and you will then run the following command:  
 `ssh -i <private_key> vagrant@<IP>`
 #### After gaining access, verify that docker is installed w/:
 `docker -v`
@@ -50,7 +50,7 @@ Navigate to the following link to follow along w/ installation: https://docs.doc
 Docker version 19.03.7, build 7141c199a2
 ```
 ### Let's Define A Image
-To create our own image, we must first define a Dockerfile. A dockerfile is like a recipe for building a cake, but in our instance a image. Defining this file is the first step in containerizing an application.
+> To create our own image, we must first define a Dockerfile. A dockerfile is like a recipe for building a cake, but in our instance a image. Defining this file is the first step in containerizing an application.
 
 #### Let's create a simple nginx image that copies files into container and serves a static site.
 ```yaml
@@ -66,12 +66,12 @@ COPY . .
 #### W/ the above code generated, we have specified a instruction set for our image to be built.
 ![ContainerVSVirtualization](docker-docs.svg)
 
-#### Now that we have the Dockerfile defined, we must now create a build of the image we specified.
+> Now that we have the Dockerfile defined, we must now create a build of the image we specified.
 
 #### Let's build our image.
 `docker build -t nginx-custom .`
 
-We should be able to see that our image was created using the following command: `docker image ls`. Output should be:
+> We should be able to see that our image was created using the following command: `docker image ls`. Output should be:
 ```sh
 REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
 nginx-custom        latest              64854d070707        0 minutes ago       127MB
@@ -91,24 +91,24 @@ CONTAINER ID        IMAGE               COMMAND                  CREATED        
 ```
 
 #### Lets verify that the container has the data we copied...
-First open a interactive terminal
+> First open a interactive terminal
 `docker exec -it nginx-custom-container bash`
 > *-it stands for* **Interactive Terminal**  
 > You should see a terminal opened:
 ```
 root@0205bdce7cc8:/app#
 ```
-Now let's check that the current working directory has our content.  
+> Now let's check that the current working directory has our content.  
 ```bash
 root@0205bdce7cc8:/app# ls
 ```
-We should see that our Dockerfile made its way into the container :+1:
+> We should see that our Dockerfile made its way into the container :+1:
 
 #### Lets verify that we access the running container via HOSTIP:8000
-You can verify via a webbrowser or you can use the `curl` command.
-* If you want to verify via browser, then just visit http://hostip:8000. You will see the webpage below.
+> You can verify via a webbrowser or you can use the `curl` command.
+> If you want to verify via browser, then just visit http://hostip:8000. You will see the webpage below.
 ![nginxpage](nginx.png)
-* If you want to verify via the terminal, then just `curl -k hostip:8000`. You will see the output below.
+> If you want to verify via the terminal, then just `curl -k hostip:8000`. You will see the output below.
 ```html
 <!DOCTYPE html>
 <html>
