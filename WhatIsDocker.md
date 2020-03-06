@@ -1,10 +1,10 @@
 # Docker Training
 
 ## What will this training include?
-- [ ]	[Installation](#installation)
-- [ ]	Configuration / setup
-- [ ]	Hosting applications
-- [ ]	Deployment
+- [ ]	[**Installation**](#installation)
+- [ ]	[**Configuration / Setup**](#configuration)
+- [ ]	[**Containerize Applications**](#containerize-applications)
+- [ ]	**Deployment**
 
 
 ## What is Docker?
@@ -34,6 +34,9 @@
 #### For this training, we will focus on a Windows based environment:
 Navigate to the following link to follow along w/ installation: https://docs.docker.com/docker-for-windows/install/
 
+## Configuration:
+
+## Containerize Applications
 ### What We Will Accomplish
 - [ ] **Create A Dockerfile**
 - [ ] **Containerize Predifined Application**
