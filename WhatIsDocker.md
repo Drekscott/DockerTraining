@@ -1,7 +1,7 @@
 # Docker Explained
 
 ## What is Docker?
-> A containerization technology that enables the creation and usage of containers.
+> Docker is a tool designed to make it easier to create, deploy, and run applications by using containers.
 
 ## What are containers?
 > A container is a set of one or more processes that are isolated from the rest of the system. All the files necessary to run them are provided from a distinct image, meaning that Linux containers are portable and consistent as they move from development, to testing, and finally to production
@@ -19,3 +19,13 @@
 
 ![ContainerVSVirtualization](container-virtual.png)
 *Seeing is believing*
+
+## Getting Started w/ Docker
+> Usually we would have an installation step here, but this would take much time. To learn more about getting docker installed please reference the docs at: https://docs.docker.com/get-docker/
+
+### What We Will Accomplish
+By the end of this training, you will have created an image, containerized a predifined application, and run that image as an container. You will be able to access 
+
+
+### Let's Define A Image
+To create our own image, we must first define a Dockerfile. A dockerfile is like a recipe for building a cake, but in our instance a image. Defining this file is the first step in containerizing an application.
