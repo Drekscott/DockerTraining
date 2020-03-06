@@ -81,9 +81,21 @@ nginx-custom        latest              64854d070707        0 minutes ago       
 * ***-d**: is to detach the process to the background*  
 * ***-p**: is to specify the port information. Here we are portforwarding from 8000 on the host into 80 on the guest*  
 
-We can see that our container is up and running. To see all currently running containersn use the command: `docker container ls`. Output should be:
+> We can see that our container is up and running. To see all currently running containersn use the command: `docker container ls`. Output should be:
 ```sh
 CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                  NAMES
 0205bdce7cc8        nginx-custom        "nginx -g 'daemon of…"   18 minutes ago      Up 18 minutes       0.0.0.0:8000->80/tcp   nginx-custom-container
 ```
 
+#### Lets verify that the container has the data we copied...
+First open a interactive terminal
+`docker exec -it nginx-custom-container bash`
+> *-it stands for **Interactive Terminal**
+> You should see a terminal opened:
+```
+root@0205bdce7cc8:/app#
+```
+Now let's check that the current working directory has our content.  
+```bash
+root@0205bdce7cc8:/app# ls
+```
