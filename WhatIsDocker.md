@@ -3,7 +3,7 @@
 ## What will this training include?
 - [ ]	[**Installation/Configuration**](#installation)
 - [ ]	[**Containerize Applications**](#containerize-applications)
-- [ ]	**Deployment**
+- [ ]	[**Deployment**](#deployment)
 
 
 ## What is Docker?
@@ -76,8 +76,9 @@ COPY . .
 REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
 nginx-custom        latest              64854d070707        0 minutes ago       127MB
 ```
-> Now that we have our image created we need to run it and create our container
+> Now that we have our image created we need to run it and create our container. Let's move on to deployment.
 
+## Deployment
 #### Let's create our container
 `docker run --name nginx-custom-container -d -p 8000:80 nginx-custom`
 * ***<--name>**: argument gives the container a name*  
