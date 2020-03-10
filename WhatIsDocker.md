@@ -50,7 +50,20 @@
 Docker version 19.03.7, build 7141c199a2
 ```
 ### Let's Define A Image
-> To create our own image, we must first define a Dockerfile. A dockerfile is like a recipe for building a cake, but in our instance a image. Defining this file is the first step in containerizing an application.
+> The Dockerfile is a set of instructions which are used to construct a Docker Image. To create our own image, we must first define a Dockerfile. A dockerfile is like a recipe for building a cake, but in our instance a image. Defining this file is the first step in containerizing an application.   
+
+> :bulb: These instructions are called Directives. Heres a list of available directives:  
+* `ADD`
+* `COPY`
+* `ENV`
+* `EXPOSE`
+* `FROM`
+* `LABEL`
+* `RUN`
+* `VOLUME`
+* `WORKDIR`
+
+*We will not delve into all of these directives. We will only focus on the directives used for this simple use case. For more information regarding directives please check:https://docs.docker.com/engine/reference/builder/*
 
 #### Let's create a simple nginx image that copies files into container and serves a static site.
 ```yaml
